@@ -16,16 +16,7 @@ describe('Square', () => {
     describe('Valid Shape', () => {
       it('should return true if shape is one of three', () => {
         const square = new Square("blue", "#ffffff", "SVG");
-        expect(square.generateSquare).toBe(`<svg version="1.1"
-        width="300" height="300"
-        xmlns="http://www.w3.org/2000/svg">
-   
-     <rect x="50" y="20" height="200" width="200" fill="blue"/>
-   
-     <text x="150" y="125" font-size="60" text-anchor="middle" fill="#ffffff">SVG</text>
-   
-   </svg>
-   `);
+        expect(square.generateSquare()).toBe(`<svg version="1.1" width="300" height="300" xmlns="http://www.w3.org/2000/svg"> <rect x="50" y="20" height="200" width="200" fill="blue"/> <text x="150" y="125" font-size="60" text-anchor="middle" fill="#ffffff">SVG</text> </svg>`);
       })
     })
     describe('Valid Shape Color', () => {

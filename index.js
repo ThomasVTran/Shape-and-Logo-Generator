@@ -11,7 +11,14 @@ inquirer
     {
         name: 'text',
         type: 'input',
-        message:'Enter up to 3 characters for text?'
+        message:'Enter up to 3 characters for text',
+        validate:(text)=>{
+            if (text.length > 3){
+                return `must choose UP to 3 characters`
+            } else {
+                return true
+            }
+        }
     },
     {
         name: 'keyColor',
@@ -41,6 +48,6 @@ inquirer
     }
     // TODO: Create a function to write svg file
      fs.writeFile( './output/logo.svg', userShape ,(err) =>
-        err ? console.error(err) : console.log('Success!')
+        err ? console.error(err) : console.log('Generated logo.svg')
     )
 });
